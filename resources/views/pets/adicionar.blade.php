@@ -11,6 +11,8 @@ Adicionar novo pet:
 
     <label for="specie">Especie</label>
     <input id="specie" name="specie" type="text" /> <br/>
+    <label for="SubSpecies">SubSpecie</label>
+    <input id="SubSpecies" name="SubSpecies" type="text" /> <br/>
 
     <label for="size">Size</label>
     <select name="size" id="size">
@@ -21,6 +23,8 @@ Adicionar novo pet:
         <option value="xl">XL</option>
     </select>
 
+    <label for="SizeM">Size Medida</label>
+    <input id="SizeM" name="SizeM" type="text"/> <br/>
     <br/>
     <button type="submit">
         Cadastrar
