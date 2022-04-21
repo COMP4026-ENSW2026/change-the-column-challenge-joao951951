@@ -26,3 +26,4 @@ Route::get('/users', function(){
 // Route::group('v1', function(){
     Route::resource('pets', PetsController::class);
 // });
+Route::put('/pets',  PetsController::switchSpecies());

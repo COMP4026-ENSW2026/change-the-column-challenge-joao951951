@@ -10,7 +10,13 @@ Adicionar novo pet:
     <input id="color" name="color" type="text" /> <br/>
 
     <label for="specie">Especie</label>
-    <input id="specie" name="specie" type="text" /> <br/>
+    <select name="specie" id="specie">
+        <option value="passaro">passaro</option>
+        <option value="coelho">coelho</option>
+        <option value="cachorro">cachorro</option>
+        <option value="gato">gato</option>
+    </select>
+
     <label for="SubSpecies">SubSpecie</label>
     <input id="SubSpecies" name="SubSpecies" type="text" /> <br/>
 

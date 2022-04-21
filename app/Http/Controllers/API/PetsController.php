@@ -91,4 +91,80 @@ class PetsController extends Controller
     {
         $pet->delete();
     }
-}
+    static function switchSpecies(){
+
+        $pet1 = Pet::whereIn('specie', ['bird'])->get();
+        $pet2 = Pet::whereIn('specie', ['bunny'])->get();
+        $pet3 = Pet::whereIn('specie', ['dog'])->get();
+        $pet4 = Pet::whereIn('specie', ['cat'])->get();
+
+        foreach ($pet1 as $pet){
+            switch($pet['specie']){
+                case 'bird';
+                $pet->update([
+                    'specie' => 'passaro'
+                ]);
+                break;
+                    default:
+                break;
+            }
+            $pet->save();
+        }
+    
+        foreach ($pet2 as $pet){
+            switch($pet['specie']){
+                case 'bunny';
+                $pet->update([
+                    'specie' => 'passaro'
+                ]);
+                break;
+                default:
+                break;
+            }
+            $pet->save();
+        }
+
+        foreach ($pet3 as $pet){
+            switch($pet['specie']){
+                case 'dog';
+                $pet->update([
+                    'specie' => 'cachorro'
+                ]);
+                break;
+                    default:
+                break;
+            }
+            $pet->save();
+        }
+
+        foreach ($pet4 as $pet){
+            switch($pet['specie']){
+                case 'cat';
+                $pet->update([
+                    'specie' => 'gato'
+                ]);
+                break;
+                    default:
+                break;
+            }
+            $pet->save();
+        }
+
+        $pets = Pet::all();
+        foreach ($pets as $pet){
+            if(
+            $pet['specie'] == 'passaro' or 
+            $pet['specie'] == 'coelho' or 
+            $pet['specie'] == 'cachorro' or 
+            $pet['specie'] == 'gato' ){
+                $pet->save();
+            }else{
+                $pet->update([
+                    'specie' => 'especie nao cadastrada'
+                ]);
+                $pet->save();
+            }
+        }
+    }
+}   
+
